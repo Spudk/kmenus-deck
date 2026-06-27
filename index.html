@@ -62,6 +62,11 @@
   .card p { font-size: 27px; line-height: 1.5; color: var(--ink-3); margin: 0; }
   .dark .card p { color: #B9AE97; }
 
+  .feat { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 30px 32px; display: flex; flex-direction: column; box-shadow: var(--sh-1, 0 1px 2px rgba(0,0,0,.06)); }
+  .feat .feico { width: 44px; height: 44px; fill: none; stroke: var(--gold-deep); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 16px; }
+  .feat h3 { font-size: 27px; font-weight: 700; color: var(--ink); margin: 0 0 9px; line-height: 1.15; }
+  .feat p { font-size: 24px; line-height: 1.45; color: var(--ink-3); margin: 0; }
+
   .stat { font-family: var(--serif); font-weight: 800; font-size: 88px; line-height: 0.95; color: var(--ink); letter-spacing: -0.02em; }
   .dark .stat { color: #fff; }
   .stat .u { font-size: 40px; color: var(--gold-deep); }
@@ -198,11 +203,14 @@
     <div class="pad">
       <div class="kicker-row"><span class="ln"></span><span class="eyebrow" style="margin:0;">The Problem</span></div>
       <h2 class="anim">“저 드라마 속 음식,<br><span class="lite">뭔지·어디서 먹는지 모른다.”</span></h2>
-      <p class="lead anim2" style="margin:30px 0 50px;">외국인이 한국 친구에게 늘 물어요. "TV에서 봤는데, 이거 먹어보고 싶어!" K-콘텐츠로 한식을 보지만 “발견 → 이해 → 실제 경험”은 끊겨 있습니다.</p>
-      <div class="cols c3">
-        <div class="card anim"><div class="num">01</div><h3>발견의 단절</h3><p>장면 속 음식의 이름조차 찾기 어렵다. 검색은 파편화돼 있고 외국어로는 더 막막하다.</p></div>
-        <div class="card anim2"><div class="num">02</div><h3>맥락의 부재</h3><p>왜 이 음식인지, 어떻게 먹는지 — 문화적 스토리가 빠져 단순 ‘메뉴’로만 소비된다.</p></div>
-        <div class="card anim3"><div class="num">03</div><h3>연결의 부재</h3><p>먹고 싶어도 ‘내 주변 어디서 파는지·내 취향에 맞는지’ 알 길이 없다. 관심이 방문으로 이어지지 못한다.</p></div>
+      <p class="lead anim2" style="margin:18px 0 22px;max-width:62ch;font-size:26px;">외국인이 한국 친구에게 늘 물어요. "TV에서 봤는데, 이거 먹어보고 싶어!" K-콘텐츠로 한식을 보지만 “발견 → 이해 → 실제 경험”은 끊겨 있습니다.</p>
+      <div style="display:flex;gap:32px;height:486px;">
+        <div style="flex:1.16;border-radius:22px;overflow:hidden;box-shadow:0 24px 48px rgba(26,10,0,0.2);position:relative;" class="anim2"><img src="deck-assets/photo-tv.png" alt="드라마 속 한식을 가리키는 외국인 부부" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"><div style="position:absolute;left:0;right:0;bottom:0;padding:24px 28px;background:linear-gradient(0deg,rgba(11,7,2,0.86),rgba(11,7,2,0));color:#fff;font-family:var(--serif);font-style:italic;font-size:24px;line-height:1.3;">“저거 먹어보고 싶어!” — 화면을 가리키는 그 순간.</div></div>
+        <div style="flex:0.84;display:flex;flex-direction:column;gap:14px;">
+          <div class="card anim" style="flex:1;padding:18px 28px;justify-content:center;"><div style="display:flex;align-items:baseline;gap:14px;"><div class="num" style="margin-bottom:0;font-size:32px;">01</div><h3 style="margin:0;">발견의 단절</h3></div><p style="margin-top:7px;">장면 속 음식의 이름조차 찾기 어렵다. 검색은 파편화돼 있고 외국어로는 더 막막하다.</p></div>
+          <div class="card anim2" style="flex:1;padding:18px 28px;justify-content:center;"><div style="display:flex;align-items:baseline;gap:14px;"><div class="num" style="margin-bottom:0;font-size:32px;">02</div><h3 style="margin:0;">맥락의 부재</h3></div><p style="margin-top:7px;">왜 이 음식인지, 어떻게 먹는지 — 문화적 스토리가 빠져 단순 ‘메뉴’로만 소비된다.</p></div>
+          <div class="card anim3" style="flex:1;padding:18px 28px;justify-content:center;"><div style="display:flex;align-items:baseline;gap:14px;"><div class="num" style="margin-bottom:0;font-size:32px;">03</div><h3 style="margin:0;">연결의 부재</h3></div><p style="margin-top:7px;">먹고 싶어도 ‘내 주변 어디서 파는지’ 알 길이 없다. 관심이 방문으로 이어지지 못한다.</p></div>
+        </div>
       </div>
     </div>
     <div class="brandtag">KMENUS</div><div class="pageno">02</div>
@@ -213,12 +221,15 @@
     <div class="pad">
       <div class="kicker-row"><span class="ln"></span><span class="eyebrow" style="margin:0;">The Solution</span></div>
       <h2 class="anim">한 흐름으로 잇는다 —<br><span class="lite">발견 · 스토리 · 연결.</span></h2>
-      <div class="cols c3" style="margin-top:54px;">
-        <div class="card anim"><div class="num">①</div><h3>화면에서 발견</h3><p>드라마·예능에 나온 메뉴를 큐레이션 피드로. “화면 속 인기” 한식을 한눈에.</p></div>
-        <div class="card anim2"><div class="num">②</div><h3>문화로 이해</h3><p>등장 장면·역사·먹는 법까지. 음식을 ‘이야기’로 만들어 욕구를 끌어올린다.</p></div>
-        <div class="card anim3"><div class="num">③</div><h3>내 주변으로</h3><p>GPS로 근처 파는 곳을 찾고, 개인화 추천으로 — 관심을 곧바로 연결한다.</p></div>
+      <div style="display:flex;gap:44px;margin-top:30px;align-items:stretch;">
+        <div style="flex:1.06;display:flex;flex-direction:column;gap:16px;justify-content:center;">
+          <div class="card anim" style="flex-direction:row;align-items:flex-start;gap:22px;padding:24px 28px;"><div class="num" style="margin-bottom:0;">①</div><div><h3 style="margin-bottom:5px;">화면에서 발견</h3><p>드라마·예능에 나온 메뉴를 큐레이션 피드로. “화면 속 인기” 한식을 한눈에.</p></div></div>
+          <div class="card anim2" style="flex-direction:row;align-items:flex-start;gap:22px;padding:24px 28px;"><div class="num" style="margin-bottom:0;">②</div><div><h3 style="margin-bottom:5px;">문화로 이해</h3><p>등장 장면·역사·먹는 법까지. 음식을 ‘이야기’로 만들어 욕구를 끌어올린다.</p></div></div>
+          <div class="card anim3" style="flex-direction:row;align-items:flex-start;gap:22px;padding:24px 28px;"><div class="num" style="margin-bottom:0;">③</div><div><h3 style="margin-bottom:5px;">내 주변으로</h3><p>GPS로 근처 파는 곳을 찾고, 개인화 추천으로 관심을 곧바로 연결한다.</p></div></div>
+        </div>
+        <div style="flex:0.94;border-radius:22px;overflow:hidden;box-shadow:0 24px 48px rgba(26,10,0,0.18);position:relative;" class="anim2"><img src="deck-assets/photo-camera.png" alt="한식을 찍는 외국인 관광객" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"><div style="position:absolute;left:0;right:0;bottom:0;padding:24px 26px;background:linear-gradient(0deg,rgba(11,7,2,0.82),rgba(11,7,2,0));color:#fff;font-family:var(--serif);font-style:italic;font-size:24px;">“이게 무슨 음식이지?” — 그 순간을 잡습니다.</div></div>
       </div>
-      <p class="lead anim3" style="margin-top:46px;max-width:56ch;font-size:29px;">언어의 벽을 넘어 외국인이 ‘먹고 싶던’ 한식을 <b>만족스러운 경험</b>으로 — 나아가 그 경험을 <b>함께 나누는 앱</b>으로 발전합니다. <span style="color:var(--gold-deep);font-weight:700;">EN·日·中·한 동시 지원.</span></p>
+      <p class="lead anim3" style="margin-top:26px;max-width:64ch;font-size:26px;">언어의 벽을 넘어 외국인이 ‘먹고 싶던’ 한식을 <b>만족스러운 경험</b>으로 — 나아가 <b>함께 나누는 앱</b>으로.<br><span style="color:var(--gold-deep);font-weight:700;">EN·日·中·한 동시 지원.</span></p>
     </div>
     <div class="brandtag">KMENUS</div><div class="pageno">03</div>
   </section>
@@ -264,22 +275,58 @@
     <div class="pageno">05</div>
   </section>
 
+  <!-- 6 · FEATURES -->
+  <section data-label="기능">
+    <div class="pad">
+      <div class="kicker-row"><span class="ln"></span><span class="eyebrow" style="margin:0;">Features</span></div>
+      <h2 class="anim">한 번 쓰면, <span class="lite">계속 쓰게 된다.</span></h2>
+      <div class="cols c3" style="grid-template-rows:1fr 1fr;margin-top:46px;gap:26px;">
+        <div class="feat anim">
+          <svg class="feico" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>
+          <h3>간편 로그인 · 공유</h3><p>국가별 가장 많이 쓰는 방식(구글·애플·라인·위챗)으로 1초 가입. 진입 장벽 0.</p>
+        </div>
+        <div class="feat anim2">
+          <svg class="feico" viewBox="0 0 24 24"><path d="M14.5 4h-5L8 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4z"/><circle cx="12" cy="13" r="3.2"/></svg>
+          <h3>사진으로 음식 인식</h3><p>카메라로 찍으면 ‘이게 무슨 음식?’ 바로 확인. 화면·메뉴판·접시 무엇이든.</p>
+        </div>
+        <div class="feat anim3">
+          <svg class="feico" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 9.5 9.5 0 0 1-4-1L3 20l1-4a8.5 8.5 0 0 1-1-4 8.38 8.38 0 0 1 8.5-9 8.5 8.5 0 0 1 8.5 8z"/></svg>
+          <h3>없는 메뉴는 문의</h3><p>데이터 없는 식당·음식은 바로 문의. 사용자와 식당이 소통하며 데이터가 자란다.</p>
+        </div>
+        <div class="feat anim">
+          <svg class="feico" viewBox="0 0 24 24"><path d="M6 4h12v17l-6-4-6 4z"/></svg>
+          <h3>기록 · 보관</h3><p>다녀온 매장과 관심 메뉴를 나만의 컬렉션으로 저장하고 모은다.</p>
+        </div>
+        <div class="feat anim2">
+          <svg class="feico" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.8l7.4-4.3M8.3 13.2l7.4 4.3"/></svg>
+          <h3>함께 나누기</h3><p>지인·가족과 맛집과 메뉴를 공유. 경험이 곧 입소문이 된다.</p>
+        </div>
+        <div class="feat anim3">
+          <svg class="feico" viewBox="0 0 24 24"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>
+          <h3>지속 회원 관리</h3><p>취향 기반 추천·알림으로 다시 찾게 만드는 리텐션 엔진.</p>
+        </div>
+      </div>
+    </div>
+    <div class="brandtag">KMENUS</div><div class="pageno">06</div>
+  </section>
+
   <!-- 6 · MARKET -->
   <section data-label="시장">
     <div class="pad">
       <div class="kicker-row"><span class="ln"></span><span class="eyebrow" style="margin:0;">Market</span></div>
       <h2 class="anim">크고, 지금 열리는 시장.</h2>
-      <div style="display:flex;gap:80px;align-items:center;margin-top:40px;flex:1;">
-        <div style="display:flex;flex-direction:column;gap:20px;" class="anim2">
+      <div style="display:flex;gap:54px;align-items:stretch;margin-top:32px;flex:1;">
+        <div style="display:flex;flex-direction:column;gap:20px;justify-content:center;" class="anim2">
           <div style="display:flex;align-items:center;gap:24px;"><div style="width:340px;height:96px;border-radius:14px;background:var(--ink);color:#fff;display:flex;align-items:center;padding:0 30px;font-weight:700;font-size:24px;">TAM</div><div><div style="font-family:var(--serif);font-weight:800;font-size:34px;color:var(--ink);">글로벌 한식 외식 · K-푸드 경험</div><div style="color:var(--ink-3);font-size:24px;">전 세계 한식 다이닝 + 콘텐츠 연계 경험 소비</div></div></div>
           <div style="display:flex;align-items:center;gap:24px;"><div style="width:260px;height:88px;border-radius:14px;background:var(--gold-deep);color:#fff;display:flex;align-items:center;padding:0 30px;font-weight:700;font-size:24px;">SAM</div><div><div style="font-family:var(--serif);font-weight:800;font-size:32px;color:var(--ink);">방한 관광객 + 주요 도시 한식</div><div style="color:var(--ink-3);font-size:24px;">인바운드 + 도쿄·북미 한식 다이닝 발견·방문 수요</div></div></div>
           <div style="display:flex;align-items:center;gap:24px;"><div style="width:180px;height:80px;border-radius:14px;background:var(--gold);color:#1a1304;display:flex;align-items:center;padding:0 28px;font-weight:800;font-size:24px;">SOM</div><div><div style="font-family:var(--serif);font-weight:800;font-size:30px;color:var(--ink);">초기: 서울 인바운드 발견</div><div style="color:var(--ink-3);font-size:24px;">3년 내 도달 가능한 거점 시장</div></div></div>
         </div>
+        <div style="flex:1;border-radius:20px;overflow:hidden;box-shadow:0 24px 48px rgba(26,10,0,0.18);" class="anim3"><img src="deck-assets/photo-street.png" alt="서울 한식 거리의 외국인 관광객" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"></div>
       </div>
       <p class="lead anim3" style="font-size:27px;max-width:60ch;">진입은 <b>좁고 뜨거운 거점</b>(서울 인바운드)에서, 확장은 <b>같은 데이터·같은 다국어 엔진</b>으로 해외 한식 시장까지.</p>
     </div>
     <div class="footnote">※ TAM/SAM/SOM은 구조와 진입 논리를 보여주는 프레임이며, 정량 추정치는 투자 단계에서 출처와 함께 확정합니다.</div>
-    <div class="pageno">06</div>
+    <div class="pageno">07</div>
   </section>
 
   <!-- 7 · BUSINESS MODEL -->
@@ -294,7 +341,7 @@
         <div class="card anim3"><h3>관광 · 공공 협력</h3><p>정부·지자체·관광기관 제휴 — 콘텐츠·데이터·캐페인 협업으로 방한 경험을 함께 설계.</p></div>
       </div>
     </div>
-    <div class="brandtag">KMENUS</div><div class="pageno">07</div>
+    <div class="brandtag">KMENUS</div><div class="pageno">08</div>
   </section>
 
   <!-- 8 · MOAT -->
@@ -308,7 +355,7 @@
         <div class="card anim3"><div class="num">◆</div><h3>관광·공공 파트너십 선점</h3><p>정부·지자체·관광기관과의 협력·데이터 채널을 먼저 확보 — 후발주자가 단기간에 복제하기 어려운 신뢰·접근 우위.</p></div>
       </div>
     </div>
-    <div class="brandtag">KMENUS</div><div class="pageno">08</div>
+    <div class="brandtag">KMENUS</div><div class="pageno">09</div>
   </section>
 
   <!-- 9 · GTM / ROADMAP -->
@@ -323,7 +370,7 @@
       </div>
       <p class="lead anim3" style="font-size:27px;margin-top:44px;">콘텐츠가 새 시즌을 낼 때마다 <b>마케팅 비용 없이</b> 신규 수요가 유입되는 구조.</p>
     </div>
-    <div class="brandtag">KMENUS</div><div class="pageno">09</div>
+    <div class="brandtag">KMENUS</div><div class="pageno">10</div>
   </section>
 
   <!-- 10 · TEAM -->
@@ -345,7 +392,7 @@
       <p class="lead anim3" style="font-size:27px;margin-top:24px;"><b style="color:var(--gold-deep);">AI를 적극 활용</b>해 1인 체제로도 빠르게 만들고 검증합니다. 필요 역량(개발·BD·콘텐츠)은 본 투자/지원을 통해 <b>초기 팀으로 확장</b>합니다.</p>
     </div>
     <div class="footnote" style="right:260px;">※ 창업자 약력은 텍스트에서 보강하세요.</div>
-    <div class="pageno">10</div>
+    <div class="pageno">11</div>
   </section>
 
   <!-- 11 · VISION / DATA -->
@@ -353,17 +400,20 @@
     <div class="pad">
       <div class="kicker-row"><span class="ln"></span><span class="eyebrow" style="margin:0;">Vision · Data Platform</span></div>
       <h2 class="anim" style="color:#fff;">단순 연결을 넘어, <span style="color:var(--gold-light);">데이터로.</span></h2>
-      <p class="lead anim2" style="color:#C9BFA8;margin:24px 0 24px;max-width:66ch;font-size:28px;">KMENUS는 소비의 맥락을 구조화된 데이터로 쌓습니다 — 그 자체가 자산이 되는 플랫폼.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px;" class="anim2">
+      <p class="lead anim2" style="color:#C9BFA8;margin:18px 0 18px;max-width:66ch;font-size:27px;">KMENUS는 소비의 맥락을 구조화된 데이터로 쌓습니다 — 그 자체가 자산이 되는 플랫폼.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px;" class="anim2">
         <span class="pill">어느 나라</span><span class="pill">어떤 사람</span><span class="pill">어떤 메뉴</span><span class="pill">어디서</span><span class="pill">어떻게</span><span class="pill">언제</span>
       </div>
-      <div class="cols c2" style="gap:30px;">
-        <div class="card anim2"><h3>음식점 · 광고주에게</h3><p>수요 데이터를 제공해 더 좋은 메뉴와 음식을 개발하도록 — 감이 아닌 근거로 의사결정을 돕습니다.</p></div>
-        <div class="card anim3"><h3>외국인 관광객에게</h3><p>니즈를 읽어 더 편리한 여행으로. 즐기고, 마무리하고, 후기를 남기는 하나의 장소가 됩니다.</p></div>
+      <div style="display:flex;gap:28px;align-items:stretch;">
+        <div style="flex:1.22;display:flex;flex-direction:column;gap:20px;">
+          <div class="card anim2"><h3>음식점 · 광고주에게</h3><p>수요 데이터를 제공해 더 좋은 메뉴와 음식을 개발하도록 — 감이 아닌 근거로 의사결정을 돕습니다.</p></div>
+          <div class="card anim3"><h3>외국인 관광객에게</h3><p>니즈를 읽어 더 편리한 여행으로. 즐기고, 마무리하고, 후기를 남기는 하나의 장소가 됩니다.</p></div>
+        </div>
+        <div style="flex:1;border-radius:18px;overflow:hidden;box-shadow:0 24px 48px rgba(0,0,0,0.45);position:relative;" class="anim3"><img src="deck-assets/photo-owner.png" alt="식당 사장님과 소통하는 관광객" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"><div style="position:absolute;left:0;right:0;bottom:0;padding:18px 22px;background:linear-gradient(0deg,rgba(11,7,2,0.85),rgba(11,7,2,0));color:#fff;font-size:19px;font-weight:600;">문의가 곧 데이터가 됩니다</div></div>
       </div>
-      <p class="lead anim3" style="color:#C9BFA8;margin-top:38px;font-size:28px;">단순 연결을 넘어 <b style="color:#fff;">데이터 분석·적용</b>까지 — 발전 가능성은 무궁무진합니다.</p>
+      <p class="lead anim3" style="color:#C9BFA8;margin-top:22px;font-size:26px;">단순 연결을 넘어 <b style="color:#fff;">데이터 분석·적용</b>까지 — 발전 가능성은 무궁무진합니다.</p>
     </div>
-    <div class="pageno">11</div>
+    <div class="pageno">12</div>
   </section>
 
   <!-- 12 · ASK -->
@@ -380,7 +430,7 @@
       <div class="anim3" style="display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-top:44px;">
         <div>
           <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;"><span class="mark" style="--ms:40px;color:#fff;"><span class="ring"></span><span class="tri"></span></span><span style="font-size:26px;color:#EDE7D8;font-weight:600;">app.kmenus.com</span></div>
-          <div style="font-size:24px;color:#C9BFA8;">Daeho Chung · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5b3f33381b3d34343f29323f3c3e753834753029">[email&#160;protected]</a></div>
+          <div style="font-size:24px;color:#C9BFA8;">Daeho Chung · dhc@foodridge.co.kr</div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
           <div style="background:#fff;padding:14px;border-radius:18px;box-shadow:0 14px 30px rgba(0,0,0,0.3);"><img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=0&data=https%3A%2F%2Fapp.kmenus.com" width="148" height="148" alt="app.kmenus.com QR" style="display:block;" /></div>
@@ -389,12 +439,12 @@
       </div>
     </div>
     <div class="footnote">※ 목표 금액·마일스톤 수치는 지원사업 양식에 맞춰 확정하세요.</div>
-    <div class="pageno">12</div>
+    <div class="pageno">13</div>
   </section>
 
 </deck-stage>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="image-slot.js"></script>
+<script src="image-slot.js"></script>
 <script src="deck-stage.js"></script>
 </body>
 </html>
