@@ -91,6 +91,30 @@
     [data-deck-active] .anim3 { animation: rise 0.6s cubic-bezier(.22,.61,.36,1) 0.2s both; }
     @keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
   }
+
+  /* ── Intro slide: invitation → silver laptop opens → zoom INTO screen ── */
+  .kin-stage { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; perspective: 2200px; overflow: hidden; }
+  .kin-glow { position: absolute; width: 1100px; height: 1100px; border-radius: 50%; background: radial-gradient(circle, rgba(201,162,74,0.18), rgba(201,162,74,0) 62%); pointer-events: none; }
+  .kin-laptop { position: relative; display: flex; flex-direction: column; align-items: center; z-index: 2; opacity: 1; transform: scale(1.78) translateY(-1%); transform-origin: 50% 42%; }
+  .kin-lid { width: 880px; height: 552px; background: linear-gradient(158deg, #E4E4E8 0%, #B6B6BD 52%, #9A9AA2 100%); border-radius: 20px 20px 8px 8px; padding: 15px; box-shadow: 0 34px 70px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.7); transform-origin: 50% 100%; transform: rotateX(0deg); }
+  .kin-screen { width: 100%; height: 100%; border-radius: 9px; background: #0E0E0E; overflow: hidden; position: relative; box-shadow: inset 0 0 0 7px #14140F; }
+  .kin-screen-inner { position: absolute; inset: 7px; padding: 32px 40px; display: flex; flex-direction: column; justify-content: center; opacity: 1; }
+  .kin-base { width: 1000px; height: 30px; margin-top: -2px; background: linear-gradient(180deg, #CACAD0 0%, #9C9CA3 72%, #7E7E85 100%); border-radius: 7px 7px 16px 16px; box-shadow: 0 28px 44px rgba(0,0,0,0.5); position: relative; z-index: 3; opacity: 0; }
+  .kin-base::after { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 160px; height: 8px; border-radius: 0 0 12px 12px; background: rgba(0,0,0,0.22); }
+  .kin-chip { display: inline-flex; align-items: center; padding: 7px 15px; border-radius: 999px; background: var(--ivory-2); font-size: 14px; font-weight: 700; color: var(--ink-2); white-space: nowrap; }
+  .kin-card { position: absolute; z-index: 6; width: 460px; padding: 52px 44px; background: var(--ivory); border-radius: 10px; border: 2px solid var(--gold); box-shadow: 0 40px 80px rgba(0,0,0,0.55); text-align: center; transform: rotate(-2deg); opacity: 0; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    [data-deck-active] .kin-card { animation: kinCard 7s ease both; }
+    [data-deck-active] .kin-laptop { animation: kinFade 7s ease both, kinZoom 7s cubic-bezier(0.5,0,0.2,1) both; }
+    [data-deck-active] .kin-lid { animation: kinLid 7s cubic-bezier(0.5,0,0.18,1) both; }
+    [data-deck-active] .kin-base { animation: kinBase 7s ease both; }
+  }
+  @keyframes kinCard { 0%{opacity:0;transform:rotate(-2deg) translateY(26px) scale(0.95);} 7%{opacity:1;transform:rotate(-2deg) translateY(0) scale(1);} 28%{opacity:1;transform:rotate(-2deg) translateY(0) scale(1);} 37%{opacity:0;transform:rotate(-2deg) translateY(-34px) scale(0.9);} 100%{opacity:0;} }
+  @keyframes kinFade { 0%{opacity:0;} 31%{opacity:0;} 42%{opacity:1;} 100%{opacity:1;} }
+  @keyframes kinZoom { 0%{transform:scale(0.92) translateY(0);} 42%{transform:scale(0.92) translateY(0);} 66%{transform:scale(0.92) translateY(0);} 100%{transform:scale(1.78) translateY(-1%);} }
+  @keyframes kinLid { 0%{transform:rotateX(-88deg);} 40%{transform:rotateX(-88deg);} 64%{transform:rotateX(0deg);} 100%{transform:rotateX(0deg);} }
+  @keyframes kinBase { 0%{opacity:0;} 42%{opacity:1;} 70%{opacity:1;} 100%{opacity:0;} }
 </style>
 </head>
 <body>
@@ -103,6 +127,48 @@
   </svg>
 </template>
 <deck-stage width="1920" height="1080">
+
+  <!-- 1 · COVER -->
+  <!-- 0 · INTRO (invitation → laptop opens → explanation) -->
+  <section data-label="초대" class="dark">
+    <div class="kin-stage">
+      <div class="kin-glow"></div>
+      <div class="kin-laptop">
+        <div class="kin-lid">
+          <div class="kin-screen">
+            <div style="position:absolute;inset:7px;background:url('deck-assets/cover-train.png') center 28%/cover no-repeat;"></div>
+            <div style="position:absolute;inset:7px;background:linear-gradient(95deg, rgba(11,7,2,0.95) 0%, rgba(11,7,2,0.86) 32%, rgba(11,7,2,0.5) 54%, rgba(11,7,2,0.12) 100%);"></div>
+            <div style="position:absolute;inset:7px;background:linear-gradient(0deg, rgba(11,7,2,0.7) 0%, rgba(11,7,2,0) 30%);"></div>
+            <div class="kin-screen-inner">
+              <div style="display:flex;align-items:center;gap:9px;margin-bottom:18px;">
+                <span class="mark" style="--ms:32px;color:#fff;"><span class="ring"></span><span class="tri"></span></span>
+                <span class="wordmark" style="font-size:23px;color:#fff;">KMENUS</span>
+              </div>
+              <div style="font-size:14px;font-weight:700;letter-spacing:0.04em;color:var(--gold-light);margin-bottom:12px;text-shadow:0 2px 12px rgba(0,0,0,0.6);">“TV에서 봤는데, 이거 먹어보고 싶어!”</div>
+              <div style="font-family:var(--serif);font-weight:800;font-size:58px;line-height:1;color:#fff;letter-spacing:-0.01em;text-shadow:0 3px 22px rgba(0,0,0,0.55);">From Screen<br><span style="color:var(--gold-light);">to Table.</span></div>
+              <p style="font-size:19px;color:#C9BFA8;margin:18px 0 0;font-family:var(--serif);font-style:italic;">화면 속 그 한식, 진짜로 맛보다.</p>
+              <div style="display:flex;gap:8px;margin-top:24px;">
+                <span style="display:inline-flex;align-items:center;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,0.13);font-size:13px;font-weight:700;color:#fff;white-space:nowrap;">K-콘텐츠 한식 발견 앱</span>
+                <span style="display:inline-flex;align-items:center;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,0.13);font-size:13px;font-weight:700;color:#fff;white-space:nowrap;">Pre-Seed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="kin-base"></div>
+      </div>
+      <div class="kin-card">
+        <div style="font-family:var(--serif);font-weight:700;letter-spacing:0.34em;font-size:22px;color:var(--gold-deep);margin-bottom:24px;">YOU'RE INVITED</div>
+        <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:18px;">
+          <span class="mark" style="--ms:44px;color:var(--ink);"><span class="ring"></span><span class="tri"></span></span>
+          <span class="wordmark" style="font-size:32px;color:var(--ink);">KMENUS</span>
+        </div>
+        <div style="width:60px;height:2px;background:var(--gold);margin:0 auto 18px;"></div>
+        <div style="font-family:var(--serif);font-style:italic;font-size:23px;color:var(--ink-3);">한 끼의 초대장</div>
+      </div>
+    </div>
+    <div class="brandtag">KMENUS</div>
+    <div class="pageno">투자 제안서 · 2026</div>
+  </section>
 
   <!-- 1 · COVER -->
   <section data-label="표지" class="dark">
@@ -314,7 +380,7 @@
       <div class="anim3" style="display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-top:44px;">
         <div>
           <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;"><span class="mark" style="--ms:40px;color:#fff;"><span class="ring"></span><span class="tri"></span></span><span style="font-size:26px;color:#EDE7D8;font-weight:600;">app.kmenus.com</span></div>
-          <div style="font-size:24px;color:#C9BFA8;">Daeho Chung · dhc@foodridge.co.kr</div>
+          <div style="font-size:24px;color:#C9BFA8;">Daeho Chung · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5b3f33381b3d34343f29323f3c3e753834753029">[email&#160;protected]</a></div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
           <div style="background:#fff;padding:14px;border-radius:18px;box-shadow:0 14px 30px rgba(0,0,0,0.3);"><img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=0&data=https%3A%2F%2Fapp.kmenus.com" width="148" height="148" alt="app.kmenus.com QR" style="display:block;" /></div>
@@ -328,7 +394,7 @@
 
 </deck-stage>
 
-<script src="image-slot.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="image-slot.js"></script>
 <script src="deck-stage.js"></script>
 </body>
 </html>
